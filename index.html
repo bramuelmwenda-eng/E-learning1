@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eLearning | Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container">
+      <h2 class="logo">eLEARNING</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#" class="active">Courses</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="btn">Join Now</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="overlay">
+    <h1 id="slide-title">Courses</h1>
+    <p id="slide-desc">Home / Pages / Courses</p>
+  </div>
+</section>
+
+  <!-- Categories -->
+  <section class="categories container">
+    <h2>Course Categories</h2>
+    <div class="grid">
+      <div class="card" data-category="all"><h3>All Courses</h3></div>
+      <div class="card" data-category="web"><h3>Web Design</h3></div>
+      <div class="card" data-category="graphic"><h3>Graphic Design</h3></div>
+      <div class="card" data-category="video"><h3>Video Editing</h3></div>
+      <div class="card" data-category="marketing"><h3>Online Marketing</h3></div>
+    </div>
+  </section>
+
+  <!-- All Courses -->
+  <section class="courses container">
+    <div class="grid" id="course-list">
+      <div class="course-card" data-category="web">
+        <img src="googlemeet.jpg" alt="">
+        <div class="course-info">
+          <h3>HTML & CSS for Beginners</h3>
+          <p>$149.00</p>
+        </div>
+      </div>
+
+      <div class="course-card" data-category="graphic">
+        <img src="advav.jpg" alt="">
+        <div class="course-info">
+          <h3>Adobe Illustrator Masterclass</h3>
+          <p>$149.00</p>
+        </div>
+      </div>
+
+      <div class="course-card" data-category="video">
+        <img src="groupwork.jpg" alt="">
+        <div class="course-info">
+          <h3>Video Editing with Premiere Pro</h3>
+          <p>$149.00</p>
+        </div>
+      </div>
+
+      <div class="course-card" data-category="marketing">
+        <img src="medium-shot-man-waving-laptop.jpg" alt="">
+        <div class="course-info">
+          <h3>Digital Marketing 101</h3>
+          <p>$149.00</p>
+        </div>
+      </div>
+
+      <div class="course-card" data-category="web">
+        <img src="advav.jpg" alt="">
+        <div class="course-info">
+          <h3>Advanced JavaScript</h3>
+          <p>$199.00</p>
+        </div>
+      </div>
+
+      <div class="course-card" data-category="graphic">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkKk7Du-P67bFCw6abmWpRFAyBfoSLPfaB-g&s" alt="">
+        <div class="course-info">
+          <h3>Photoshop for Beginners</h3>
+          <p>$129.00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 eLearning. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const categoryCards = document.querySelectorAll('.categories .card');
+    const courseCards = document.querySelectorAll('.course-card');
+
+    categoryCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const category = card.getAttribute('data-category');
+
+        courseCards.forEach(course => {
+          if (category === 'all' || course.getAttribute('data-category') === category) {
+            course.style.display = 'block';
+          } else {
+            course.style.display = 'none';
+          }
+        });
+
+        categoryCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
