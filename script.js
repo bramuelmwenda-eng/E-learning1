@@ -1,4 +1,11 @@
 
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
 // Example simple scroll animation
 document.addEventListener("scroll", () => {
   const elements = document.querySelectorAll(".card, .course-card, .testimonial");
