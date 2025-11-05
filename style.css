@@ -85,6 +85,31 @@ body {
         transition: 0.4s ease;
       }
 
+      .categories .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #e0e0e0;
+}
+
+/* Mobile View: Fit into 2 rows (e.g., 3 on first, 2 on second) */
+@media (max-width: 600px) {
+  .categories .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
       nav ul {
         flex-direction: column;
         gap: 30px;
@@ -168,7 +193,7 @@ body {
       background: white;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 220px;
+      width: 170px;
       cursor: pointer;
       transition: transform 0.2s;
     }
@@ -249,3 +274,44 @@ body {
     .fade {
   animation: fadeOut 4.5s ease-in forwards;
 }
+.categories .grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: #f4f4f4;
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #e0e0e0;
+}
+
+/* Mobile View: Fit into 2 column */
+@media (max-width: 728px) {
+  .categories .grid {
+    grid-template-columns: repeat(4, 1fr) ;
+   gap: 1rem;
+  }
+  .categories .card{
+    width:50px;
+    height:30px;
+    align-items: center;
+  }
+ .categories .card h3 {
+  font-size: 0.6rem;
+  text-align: center;
+  padding:0.1rem;
+}
+}
+
+.card h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+
