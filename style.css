@@ -55,7 +55,54 @@ body {
       border-radius: 5px;
       cursor: pointer;
     }
+   .menu-toggle {
+      display:none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
 
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      nav {
+       display: none;
+       position: absolute;
+        top: 0;
+        right: -250px;
+        height: 200px;
+        width: 250px;
+        background: #1b1b1b;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s ease;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .btn {
+        display: none;
+      }
+
+      nav.active {
+        display: block;
+        right: 0;
+      }
+    }
     .hero {
   position: relative;
   width: 100%;
