@@ -1,3 +1,4 @@
+
 // Example simple scroll animation
 document.addEventListener("scroll", () => {
   const elements = document.querySelectorAll(".card, .course-card, .testimonial");
